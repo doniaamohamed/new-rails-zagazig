@@ -7,3 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+user1 = User.create(name: "Donia", age: 22)
+user2 = User.create(name: "Ahmed", age: 25)
+
+post1 = Post.create(title: "First Post", content: "Hello World", user: user1, creator: user2)
+post2 = Post.create(title: "Second Post", content: "Rails is fun", user: user2, creator: user1)
+
+editor1 = Editor.create(name: "Editor One")
+editor2 = Editor.create(name: "Editor Two")
+
+post1.editors << editor1
+post2.editors << editor2
